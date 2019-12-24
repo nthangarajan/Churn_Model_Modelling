@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Bank Customer Chrun Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	<table>
+	<tr>
+	<th> Input Fields </th>
+	<th> Value </th>
+    </tr>
+    
+
+<tr>
+	<td>
+	   <label>CreditScore</label>
+	</td>
+	<td>
+	   <input value="616"    type="number" name="CreditScore" placeholder="CreditScore" required="required" />
+	</td>   
+</tr>		
+<tr>
+    <td>	
+		<label>Gender</label>
+	</td>
+	<td>
+		<input value="0"     type="number" name="Gender" placeholder="Gender" required="required" />
+	</td>	
+</tr>
+
+<tr>
+	<td>		
+	<label>Age</label>
+	</td>
+	<td>
+		<input value="45"   type="number" name="Age" placeholder="Age"  required="required" />
+	</td>	
+</tr>
+	<td>	
+		<label>Tenure</label>
+	<td>
+	<input value="3"      type="number" name="Tenure" placeholder="Tenure" required="required" />
+	</td>
+</tr>
+
+<tr>
+	<td>		
+		<label>Balance</label>
+	</td>
+	
+	<td>
+	<input value="" type="number" name="Balance" placeholder="Balance" required="required" />
+	</td>
+</tr>
+
+<tr>	
+	<td>	
+		<label>NumOfProducts</label>
+	</td>	
+	<td>
+	<input value="2" type="number" name="NumOfProducts" placeholder="NumOfProducts" required="required" />
+	</td>
+</tr>
+
+<tr>	
+	<td>	
+		<label>HasCrCard</label>
+	</td>	
+	<td>
+		<input value="0" type="number" name="HasCrCard" placeholder="HasCrCard" required="required" />
+	</td>	
+</tr>
+
+<tr>
+	<td>		
+		<label>IsActiveMember</label>
+	</td>
+	
+	<td>	
+		<input value="1" type="number" name="IsActiveMember" placeholder="IsActiveMember" required="required" />
+	</td>
+</tr>
+
+<tr>		
+	<td>
+		<label>EstimatedSalary</label>
+	</td>
+	<td>	
+		<input value="643" type="number" name="EstimatedSalary" placeholder="EstimatedSalary" required="required" />
+	</td>	
+</tr>
+
+<tr>	
+	<td>	
+		<label>Is it France No=0 and Yes=1</label>
+	</td>
+	
+	<td>	
+		<input value="0" type="number" name="Geography_0" placeholder="Geography_0" required="required" />
+	</td>	
+</tr>
+
+<tr>
+	<td>		
+		<label>Is it Germany No=0 and Yes=1</label>
+	</td>
+	
+	<td>
+		<input value="1" type="number" name="Geography_1" placeholder="Geography_1" required="required" />
+	</td>
+</tr>
+		
+<tr>
+	<td>
+		<label>Is it Spain No=0 and Yes=1</label>
+	</td>
+	<td>
+		<input value="0" type="number" name="Geography_2" placeholder="Geography_2" required="required" />
+	</td>
+</tr>
+
+</table>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+<B>
+<U>
+   {{ prediction_text }}
+<U>
+</B>
+   
+ </div>
+
+
+</body>
+</html>
